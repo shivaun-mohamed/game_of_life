@@ -31,11 +31,14 @@ grid = []
 for i in range(num_rows):
     current_row = []
     for j in range(num_cols):
-        current_row.append(random())
 
-        if current_row[0] <= 0.25:
-            grid.append(1)
+        mortality = random()
+
+        if mortality <= 0.25:
+            current_row.append(1)
         else:
-            grid.append(0)
+            current_row.append(0)
+
+    grid.append(current_row)
 
 print(grid)            
