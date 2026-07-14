@@ -38,6 +38,5 @@ def create_grid():
         # add current row to grid
         grid.append(current_row)
 
-    print(grid)
-
-create_grid()
+    # return grid
+    return grid

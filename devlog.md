@@ -54,3 +54,11 @@ Was deciding on a flat vs src/-package layout. Ultimately decided to use the src
 - devlog.md
 - pyproject.toml
 - README.md
+
+## grid_setup.py - Complete (2026-07-13)
+
+Finally finished grid_setup.py. Initially ran into issues understanding nested loops and the random module. Also had trouble understanding the logic sequence. My original plan was to iterate through each cell and assign it a value of 1 (alive) or 0 (dead). Unfortunately I had no clue how to do this while considering the 25% mortality rate of the cell. I was also appending the wrong information to the wrong data structure. My grid would output the floating point numbers of the random float between 0 and 1 rather than just 0 and 1. I did not compare the values to 0.25 first. I also was checking the wrong parameter (current_row(0)) instead of the new value for each loop. 
+
+I fixed this while spending some time away from coding for the remainder of the day. When I realized I should set the mortality rate as another variable and then give it a special casing to determine the cell's mortality, then I started to understand the logic. 
+
+I learned more about nested loops and data containers through this function. I also wrapped the logic into the create_grid() function so that main.py can import the grid when needed. I used no parameters because all of the information was being made by the function itself rather than calling on outside information. All variables are local for testability and predictability reasons as they will not be affected by outside code.
