@@ -20,12 +20,26 @@ def compute_live_neighbours(grid, row, col) -> int: # return an int
     num_rows = len(grid)
     num_cols = len(grid[0])
 
-    
+    # initialize count
     neighbour_count = 0
 
+    # gather potential positions of neighbour relative to cell
     neighbour_pos = ((-1,-1), (0,-1), (1,-1), (-1,0), (1,0), (-1,1), (0,1), (1,1))
 
+    # iterate through neighbour positions
+    for pos in neighbour_pos:
+        row_shift = pos[0]  # row offset value
+        col_shift = pos[1]  # col offset value
 
+        # get neighbour position relative to grid
+        neighbour = (row_shift + row, col_shift + col)
+
+        # validity check to make sure neighbour is in bounds relative to grid dimensions
+        if 0 <= neighbour[0] < num_rows and 0 <= neighbour[1] < num_cols:
+            if grid[neighbour[0]][neighbour[1]] == 1:
+                neighbour_count += 1 # update count
+    
+    # return counter
     return neighbour_count
 
 
