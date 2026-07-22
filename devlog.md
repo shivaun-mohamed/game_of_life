@@ -62,3 +62,13 @@ Finally finished grid_setup.py. Initially ran into issues understanding nested l
 I fixed this while spending some time away from coding for the remainder of the day. When I realized I should set the mortality rate as another variable and then give it a special casing to determine the cell's mortality, then I started to understand the logic. 
 
 I learned more about nested loops and data containers through this function. I also wrapped the logic into the create_grid() function so that main.py can import the grid when needed. I used no parameters because all of the information was being made by the function itself rather than calling on outside information. All variables are local for testability and predictability reasons as they will not be affected by outside code.
+
+## neighbour_count.py - Complete (2026-07-17)
+
+Finished neighbour_count.py. I had trouble figuring out the loop sequence through neighbour_pos and initially iterated through num_rows and num_cols again. I then realized they were unneccessary for the loop as I was only iterating through the neighbour positions relative to the cell rather than the grid. I also had trouble getting the neighbour position relative to the grid and iterating through that.
+
+To solve this, I looked up how to do this. I ended up making a row offset value (row_shift) and column offset value (col_shift) and adding these to their respective axes (i.e., rows and columns). This calculates where the neighbours are when we are looking at the cell. 
+
+Another issue I had was with syntax and using square and round brackets. Particularly, I used round brackets when including the parameters for the grid call rather than square and as a result, I ran into a logic error where my neighbour count would not be properly updated as it couldn't read the value (1 or 0) of that neighbour. 
+
+Overall, from this function, I learned more about structuring loops and being particular about what I am looping through. In addition, I learned a bit more about 2D array algorithms (i.e., offset values and iterating through them)
